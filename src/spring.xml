@@ -4,7 +4,24 @@
 <beans>
 
 	<bean id="triangle" class="com.gaurav.springmvc.Triangle">
-		<!-- <property name="type" value="Equilateral" /> -->
-		<constructor-arg value="Isoceles"></constructor-arg>
+		<property name="pointA" ref="firstPoint" />
+		<property name="pointB" ref="secondPoint" />
+		<property name="pointC" ref="thirdPoint" />
 	</bean>
+
+	<bean id="firstPoint" class="com.gaurav.springmvc.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0" />
+	</bean>
+
+	<bean id="secondPoint" class="com.gaurav.springmvc.Point">
+		<property name="x" value="-20" />
+		<property name="y" value="0" />
+	</bean>
+
+	<bean id="thirdPoint" class="com.gaurav.springmvc.Point">
+		<property name="x" value="0" />
+		<property name="y" value="20" />
+	</bean>
+
 </beans>

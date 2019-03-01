@@ -3,16 +3,11 @@
 
 <beans>
 
-	<!-- <bean id="triangle" class="com.gaurav.springmvc.Triangle"> <property 
-		name="type" value="Equilateral" /> <constructor-arg value="Isoceles"></constructor-arg> 
-		<constructor-arg value="20"></constructor-arg> <constructor-arg type="int" 
-		value="20"></constructor-arg> </bean> -->
-
-<bean id="triangle" class="com.gaurav.springmvc.Triangle">
-	<property name="pointA" ref="firstPoint" />
-	<property name="pointB" ref="secondPoint" />
-	<property name="pointC" ref="thirdPoint" />
-</bean>
+	<bean id="triangle" class="com.gaurav.springmvc.Triangle">
+		<property name="pointA" ref="firstPoint" />
+		<property name="pointB" ref="secondPoint" />
+		<property name="pointC" ref="thirdPoint" />
+	</bean>
 
 	<bean id="firstPoint" class="com.gaurav.springmvc.Point">
 		<property name="x" value="0" />
