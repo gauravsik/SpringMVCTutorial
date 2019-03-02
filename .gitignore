@@ -8,6 +8,16 @@ Thumbs.db
 *~
 *.sublime-*
 
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.class
+
 # Build Artifacts
 
 .gradle/
