@@ -1,29 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
-<!-- Spring Support For Collections -->
+<!-- Autowiring -->
 <beans>
 
-	<bean id="triangle" class="com.gaurav.springmvc.Triangle">
-		<property name="points">
-		<list>
-			<ref bean="firstPoint"/>
-			<ref bean="secondPoint"/>
-			<ref bean="thirdPoint"/>
-		</list>
-		</property>
+	<bean id="triangle" class="com.gaurav.springmvc.Triangle"
+		autowire="byName">
+		
 	</bean>
 
-	<bean id="firstPoint" class="com.gaurav.springmvc.Point">
+	<bean id="pointA" class="com.gaurav.springmvc.Point">
 		<property name="x" value="0" />
 		<property name="y" value="0" />
 	</bean>
 
-	<bean id="secondPoint" class="com.gaurav.springmvc.Point">
+	<bean id="pointB" class="com.gaurav.springmvc.Point">
 		<property name="x" value="-20" />
 		<property name="y" value="0" />
 	</bean>
 
-	<bean id="thirdPoint" class="com.gaurav.springmvc.Point">
+	<bean id="pointC" class="com.gaurav.springmvc.Point">
 		<property name="x" value="0" />
 		<property name="y" value="20" />
 	</bean>
