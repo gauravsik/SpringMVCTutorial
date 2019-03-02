@@ -4,7 +4,7 @@
 <beans>
 
 	<bean id="triangle" class="com.gaurav.springmvc.Triangle"
-		autowire="byName">
+		autowire="byName" scope="singleton">
 		
 	</bean>
 
