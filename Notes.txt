@@ -27,3 +27,10 @@ Web-aware Context Bean Scopes
 3: Global Session: New bean per global HTTP session.  Applicable in the portlet context.
 
 Woring of singleton bean is different than the singleton pattern. You could have multiple spring containers runnig in the same JVM and each of those have the same object configured and thus it cannot be called as pure singleton.
+
+Topic : ApplicationContextAware
+
+ApplicationContextAware is nothing but an interface provided by spring. Any class that implements the interface can have an overidden implementation of the setApplicationContextAware() method which takes the object of application context.
+This way we can initialize beans in any class straight by calling the getBean() method instead of wiring them.
+
+There are other context aware interfaces as well.
