@@ -4,16 +4,29 @@
 <beans>
 
 	<bean id="parentTriangle" class="com.gaurav.springmvc.Triangle">
-		<property name="pointA" ref="pointA" />
+		<property name="points">
+			<list>
+				<ref bean="pointA" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="triangle1" class="com.gaurav.springmvc.Triangle" parent="parentTriangle">
-		<property name="pointB" ref="pointB" />
-		<property name="pointC" ref="pointC" />
+		<property name="points">
+			<list merge="true">
+				<ref bean="pointB" />
+				<ref bean="pointC" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="triangle2" class="com.gaurav.springmvc.Triangle" parent="parentTriangle">
-		<property name="pointB" ref="pointA" />
+		<property name="points">
+			<list merge="true">
+				<ref bean="pointB" />
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="pointA" class="com.gaurav.springmvc.Point">
