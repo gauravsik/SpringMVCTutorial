@@ -36,6 +36,11 @@ This way we can initialize beans in any class straight by calling the getBean() 
 There are other context aware interfaces as well.
 
 Topic: Bean Definition Inheritance
-Parent and child bean
+Parent and child bean, doe not inherit the bean but inherits the bean definition
 Inherit list and other collections as well define parent as abstarct which be treated as a template without initializing the parent bean.
-For adding the new element in the parent bean collection type use merge=true
+For adding the new element in the parent bean collection type use merge
+
+Topic :  LifeCycle Callbacks
+
+There are various operation that need to be done at various stages of application. 
+Spring provides lifecycle call backs methods that can be utilized to run operations before bean initialization and after it, basically init and destroy method.

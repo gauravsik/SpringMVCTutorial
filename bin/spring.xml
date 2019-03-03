@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 <!-- Autowiring -->
-<beans>
+<beans default-init-method="myInit" default-destroy-method="myCleanUp">
 
+	<!-- <bean id="parentTriangle" class="com.gaurav.springmvc.Triangle" abstract="true" init-method="myInit" destroy-method="myCleanUp">
+		<property name="points">
+			<list>
+				<ref bean="pointA" />
+			</list>
+		</property>
+	</bean> -->
+	
 	<bean id="parentTriangle" class="com.gaurav.springmvc.Triangle" abstract="true">
 		<property name="points">
 			<list>
@@ -11,20 +19,11 @@
 		</property>
 	</bean>
 	
-	<bean id="triangle1" class="com.gaurav.springmvc.Triangle" parent="parentTriangle">
+	<bean id="triangle" class="com.gaurav.springmvc.Triangle" parent="parentTriangle">
 		<property name="points">
 			<list merge="true">
 				<ref bean="pointB" />
 				<ref bean="pointC" />
-			</list>
-		</property>
-	</bean>
-	
-	<bean id="triangle2" class="com.gaurav.springmvc.Triangle" parent="parentTriangle">
-		<property name="points">
-			<list merge="true">
-				<ref bean="pointB" />
-				
 			</list>
 		</property>
 	</bean>
