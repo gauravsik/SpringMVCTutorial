@@ -26,9 +26,13 @@
 
 	<!-- <bean class="com.gaurav.springmvc.DisplayNameBeanPostProcessor" /> -->
 
-	<bean class="com.gaurav.springmvc.MyBeanFactoryPostProcessor"></bean>
+	<!-- <bean class="com.gaurav.springmvc.MyBeanFactoryPostProcessor"></bean> -->
 	<bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations" value="pointsconfig.properties" />
+	</bean>
+	
+	<bean id="circle" class="com.gaurav.springmvc.Circle">
+		<property name="center" ref="pointA" />
 	</bean>
 </beans>
