@@ -1,46 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
-<!-- Autowiring -->
-<beans default-init-method="myInit" default-destroy-method="myCleanUp">
 
-	<!-- <bean id="parentTriangle" class="com.gaurav.springmvc.Triangle" abstract="true" init-method="myInit" destroy-method="myCleanUp">
-		<property name="points">
-			<list>
-				<ref bean="pointA" />
-			</list>
-		</property>
-	</bean> -->
-	
-	<bean id="parentTriangle" class="com.gaurav.springmvc.Triangle" abstract="true">
-		<property name="points">
-			<list>
-				<ref bean="pointA" />
-			</list>
-		</property>
-	</bean>
-	
-	<bean id="triangle" class="com.gaurav.springmvc.Triangle" parent="parentTriangle">
-		<property name="points">
-			<list merge="true">
-				<ref bean="pointB" />
-				<ref bean="pointC" />
-			</list>
-		</property>
+<beans>
+
+	<bean id="triangle" class="com.gaurav.springmvc.Triangle">
+		<property name="pointA" ref="firstPoint" />
+		<property name="pointB" ref="secondPoint" />
+		<property name="pointC" ref="thirdPoint" />
 	</bean>
 
-	<bean id="pointA" class="com.gaurav.springmvc.Point">
+	<bean id="firstPoint" class="com.gaurav.springmvc.Point">
 		<property name="x" value="0" />
 		<property name="y" value="0" />
 	</bean>
 
-	<bean id="pointB" class="com.gaurav.springmvc.Point">
+	<bean id="secondPoint" class="com.gaurav.springmvc.Point">
 		<property name="x" value="-20" />
 		<property name="y" value="0" />
 	</bean>
 
-	<bean id="pointC" class="com.gaurav.springmvc.Point">
+	<bean id="thirdPoint" class="com.gaurav.springmvc.Point">
 		<property name="x" value="0" />
 		<property name="y" value="20" />
 	</bean>
+	
+	<bean class="com.gaurav.springmvc.DisplayNameBeanPostProcessor" />
 
 </beans>

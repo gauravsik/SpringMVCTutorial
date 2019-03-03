@@ -44,3 +44,9 @@ Topic :  LifeCycle Callbacks
 
 There are various operation that need to be done at various stages of application. 
 Spring provides lifecycle call backs methods that can be utilized to run operations before bean initialization and after it, basically init and destroy method.
+
+Topic :  BeanPostProcessor
+The disadvantage of lifecycle callback methods is that the beans for which the method are to be configure to run have to contain the methods.
+
+BeanPostProcessor is a feature provided by spring which allows us to write methods that will be run for every bean initialization and destruction.
+This can mainly be implemented in the configuration related method calls.
