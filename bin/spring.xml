@@ -3,7 +3,7 @@
 <!-- Autowiring -->
 <beans>
 
-	<bean id="parentTriangle" class="com.gaurav.springmvc.Triangle">
+	<bean id="parentTriangle" class="com.gaurav.springmvc.Triangle" abstract="true">
 		<property name="points">
 			<list>
 				<ref bean="pointA" />
