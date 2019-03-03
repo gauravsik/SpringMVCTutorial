@@ -3,9 +3,17 @@
 <!-- Autowiring -->
 <beans>
 
-	<bean id="triangle" class="com.gaurav.springmvc.Triangle"
-		autowire="byName" scope="singleton">
-		
+	<bean id="parentTriangle" class="com.gaurav.springmvc.Triangle">
+		<property name="pointA" ref="pointA" />
+	</bean>
+	
+	<bean id="triangle1" class="com.gaurav.springmvc.Triangle" parent="parentTriangle">
+		<property name="pointB" ref="pointB" />
+		<property name="pointC" ref="pointC" />
+	</bean>
+	
+	<bean id="triangle2" class="com.gaurav.springmvc.Triangle" parent="parentTriangle">
+		<property name="pointB" ref="pointA" />
 	</bean>
 
 	<bean id="pointA" class="com.gaurav.springmvc.Point">

@@ -32,5 +32,10 @@ Topic : ApplicationContextAware
 
 ApplicationContextAware is nothing but an interface provided by spring. Any class that implements the interface can have an overidden implementation of the setApplicationContextAware() method which takes the object of application context.
 This way we can initialize beans in any class straight by calling the getBean() method instead of wiring them.
-
+ 
 There are other context aware interfaces as well.
+
+Topic: Bean Definition Inheritance
+Parent and child bean
+Inherit list and other collections as well define parent as abstarct which be treated as a template without initializing the parent bean.
+For adding the new element in the parent bean collection type use merge=true
