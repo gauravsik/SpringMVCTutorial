@@ -1,7 +1,8 @@
 package com.gaurav.springmvc;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.annotation.Resource;
 
 public class Circle implements Shape {
 
@@ -10,9 +11,8 @@ public class Circle implements Shape {
 	public Point getCenter() {
 		return center;
 	}
-	
-	@Autowired
-	@Qualifier("circleRelated")
+
+	@Resource
 	public void setCenter(Point point) {
 		this.center = point;
 	}
@@ -21,6 +21,16 @@ public class Circle implements Shape {
 	public void draw() {
 		System.out.println("Drawing Circle");
 		System.out.println("Circle point is: (" + center.getX() + "," + center.getY() + ")");
+	}
+
+	@PostConstruct
+	public void initializeCircle() {
+		System.out.println("Initialized Circle");
+	}
+	
+	@PreDestroy
+	public void destroyCircle() {
+		System.out.println("Destroyed Circle"); 
 	}
 
 }

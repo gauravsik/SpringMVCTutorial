@@ -6,9 +6,11 @@
 	xmlns:context="http://www.springframework.org/schema/context">
 
 
-	<!-- <bean id="triangle" class="com.gaurav.springmvc.Triangle"> <property 
-		name="pointA" ref="pointA" /> <property name="pointB" ref="pointB" /> <property 
-		name="pointC" ref="pointC" /> </bean> -->
+	<!-- <bean id="triangle" class="com.gaurav.springmvc.Triangle">
+		<property name="pointA" ref="pointA" />
+		<property name="pointB" ref="pointB" />
+		<property name="pointC" ref="pointC" />
+	</bean> -->
 
 	<bean id="circle" class="com.gaurav.springmvc.Circle">
 
@@ -25,7 +27,7 @@
 		<property name="y" value="0" />
 	</bean>
 
-	<bean id="pointC" class="com.gaurav.springmvc.Point">
+	<bean id="center" class="com.gaurav.springmvc.Point">
 		<property name="x" value="0" />
 		<property name="y" value="20" />
 	</bean>
