@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
 
-<beans>
 
-	<bean id="triangle" class="com.gaurav.springmvc.Triangle">
-		<property name="pointA" ref="pointA" />
-		<property name="pointB" ref="pointB" />
-		<property name="pointC" ref="pointC" />
+	<!-- <bean id="triangle" class="com.gaurav.springmvc.Triangle"> <property 
+		name="pointA" ref="pointA" /> <property name="pointB" ref="pointB" /> <property 
+		name="pointC" ref="pointC" /> </bean> -->
+
+	<bean id="circle" class="com.gaurav.springmvc.Circle">
+
 	</bean>
 
 	<bean id="pointA" class="com.gaurav.springmvc.Point">
-		<property name="x" value="${pointA.pointX}" />
-		<property name="y" value="${pointA.pointY}" />
+		<qualifier value="circleRelated" />
+		<property name="x" value="0" />
+		<property name="y" value="0" />
 	</bean>
 
 	<bean id="pointB" class="com.gaurav.springmvc.Point">
@@ -23,19 +29,7 @@
 		<property name="x" value="0" />
 		<property name="y" value="20" />
 	</bean>
+		
+	<context:annotation-config />
 
-	<!-- <bean class="com.gaurav.springmvc.DisplayNameBeanPostProcessor" /> -->
-
-	<!-- <bean class="com.gaurav.springmvc.MyBeanFactoryPostProcessor"></bean> -->
-	<bean
-		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="locations" value="pointsconfig.properties" />
-	</bean>
-	
-	<bean id="circle" class="com.gaurav.springmvc.Circle">
-		<!-- <property name="center" ref="pointA" /> -->
-	</bean>
-	
-	<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />
-	
 </beans>
