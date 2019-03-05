@@ -50,3 +50,8 @@ The disadvantage of lifecycle callback methods is that the beans for which the m
 
 BeanPostProcessor is a feature provided by spring which allows us to write methods that will be run for every bean initialization and destruction.
 This can mainly be implemented in the configuration related method calls.
+
+Topic : Event Handling in spring
+Event publisher -  The entity which publishes the event
+Event listener -  The entity which listens the event
+Event itself
